@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = document.getElementById("registration-form");
     const feedbackDiv= document.getElementById("form-feedback");
     
-    form.addEventListener('submit', function(event) {
+    form.addEventListener('submit', (event)=> {
         event.preventDefault(); // Prevent form submission
         const username = document.getElementById('username').valuex.trim();
         const email = document.getElementById('email').valuex.trim();
@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     message.push ("password must be at least 8 characters long");
     
    }
+
    feedbackDiv.style.display="block";
    if(isValid){
     feedbackDiv.textContent="Registration Successful";
