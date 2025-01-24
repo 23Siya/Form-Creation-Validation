@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Validate email
 
-        if (!email.include ("@", ".")) {
+        if (!email.include (!email.includes("@") || !email.includes("."))) {
           isValid=false;
           message.push ("email must have @ and . charecters  to be valid");
         }
