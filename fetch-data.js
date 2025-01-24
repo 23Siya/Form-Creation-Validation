@@ -11,7 +11,7 @@ try{
 const users = await response.json();
 
 dataContainer.innerHTML = '';
-
+const userList =document.createElement('ul');
 }
  catch(Error){
 
