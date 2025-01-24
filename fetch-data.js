@@ -9,6 +9,9 @@ try{
     
 }
 const users = await response.json();
+
+dataContainer.innerHTML = '';
+
 }
  catch(Error){
 
