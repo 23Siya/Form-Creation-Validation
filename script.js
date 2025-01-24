@@ -27,15 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
    // Validate password
-      if (password.value.length < 6) {
-        passwordError.textContent = 'Password must be at least 6 characters long.';
-        return;
-      } else {
-        passwordError.textContent = '';
-      }
-      form.submit();
-    });
+   if (password.value.length <8) {
+    isValid=false;
+    message.push ("password must be at least 8 characters long");
     
-
+   }
+   feedbackDiv.style.display="block";
+   if(isValid){
+    feedbackDiv.textContent="Registration Successful";
+    feedbackDiv.style.color="#28a745";
+   }
+   else{
+    feedbackDiv.innerHTML=message.join("<br>");
+    feedbackDiv.style.color="#dc3545";
+   }
+    });
   
 });
