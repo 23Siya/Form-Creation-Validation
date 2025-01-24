@@ -11,11 +11,20 @@ try{
 const users = await response.json();
 
 dataContainer.innerHTML = '';
-const userList =document.createElement('ul');
-}
- catch(Error){
+const userList =document.createElement('li');
 
+users.forEach(user => {
+    const listItem = document.createElement('li');
+    listItem.textContent = user.name; // Set the user name
+    userList.appendChild(listItem); // Add the list item to the list
+});
+}
+ catch(error){
+
+    dataContainer.innerHTML = 'Failed to load user data.';
+        console.error('Error fetching user data:', error);
  }
+ document.addEventListener('DOMContentLoaded', fetchUserData);
 
     
 }
