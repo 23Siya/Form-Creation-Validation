@@ -14,23 +14,18 @@ document.addEventListener("DOMContentLoaded", () => {
      // Validate username
      
       const usernameError = document.getElementById('usernameError');
-      if (username.value) {
-        usernameError.textContent = 'Username must be at least 3 characters long.';
-        return;
-      } else {
-        usernameError.textContent = '';
+      if (username.value.length <3) {
+        isValid=false;
+        message.push ("Username must be at least 3 characters long");
       }
 
       // Validate email
-      
-      const emailError = document.getElementById('emailError');
-      if (!/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(emailInput.value)) {
-        emailError.textContent = 'Please enter a valid email address.';
-        return;
-      } else {
-        emailError.textContent = '';
-      }
-      
+
+        if (!email.include ("@", ".")) {
+          isValid=false;
+          message.push ("email must have @ and . charecters  to be valid");
+        }
+
    // Validate password
       if (password.value.length < 6) {
         passwordError.textContent = 'Password must be at least 6 characters long.';
