@@ -5,10 +5,14 @@ try{
   const response= await fetch(apiUrl);  
   if(!response.ok)
 {
-    throw new Event(`HTTP error! Status: ${response.status}`);
-}
-
-}
+    throw new Error(`HTTP error! Status: ${response.status}`);
     
+}
+const users = await response.json();
+}
+ catch(Error){
+
+ }
+
     
 }
